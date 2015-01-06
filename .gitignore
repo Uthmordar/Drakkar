@@ -1,3 +1,5 @@
 phpunit-report
-vendor
+vendor/composer/
+vendor/symfony/
+vendor/twig/
 nbproject
