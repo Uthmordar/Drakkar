@@ -2,4 +2,5 @@ phpunit-report
 vendor/composer/
 vendor/symfony/
 vendor/twig/
+vendor/swiftmailer/
 nbproject
