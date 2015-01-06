@@ -1,0 +1,356 @@
+/* css home */
+body{
+    background-color : cyan;
+}
+
+#wrapper {
+    width : 148rem;
+    margin : 0 auto;
+    position : relative;
+}
+/* header */
+
+header {
+    width : 100%;
+    position : absolute;
+    top : 0;
+    left : 0;
+    z-index : 100;
+}
+
+/* LOGO */
+header #logo-header{
+    height : 307px;
+    width : 451px;
+    position : relative;
+    margin : 1rem auto;
+    text-align: center;
+}
+
+#logo{
+    position : absolute;
+    top : 7rem;
+    left : 0;
+}
+
+#bulle{
+    position : absolute;
+    top : 31rem;
+    left : 15rem;
+    opacity : 0;
+    -webkit-transition: all 1s ease-in;
+    transition: all 1s ease-in;
+    z-index : 3;
+}
+/* fiole */
+
+#fiole{
+    position : fixed;
+    width : 433px;
+    height : 502px;
+    bottom: 15rem;
+    left : 0;
+    z-index : 10;
+    -webkit-transition: all 1.2s ease-in;
+    transition: all 1.2s ease-in;
+}
+
+/* slide */
+
+.slide{
+    width : 100%;
+    padding : 1rem 0rem;
+    position : relative;
+    color : #391572;
+    opacity : 0.9;
+}
+
+.slide.active{
+    opacity : 1;
+}
+
+/* accueil */
+
+#slide-1{
+    background-color: #00e4ff;
+    color: white;
+    opacity : 1;
+}
+
+#slide-1 .intro-txt{
+    margin : 0 auto;
+    text-align: center;
+    width : 100%;
+    top : 48%;
+    position : absolute;
+    background-color : #ff4800;
+    opacity : 0.9;
+    padding: 3rem 0.5rem 5rem;
+    z-index : 10;
+}
+
+#slide-1 p{
+    margin : 0.5rem auto;
+    font-size : 3.8rem;
+    line-height : 4rem;
+    text-align: center;
+}
+
+#play{
+    position : absolute;
+    bottom : 12rem;
+    left : 51rem;
+    border-bottom : 15px inset #11001e;
+    cursor : pointer;
+    text-align: center;
+    width: 45rem;
+    height: 12rem;
+    background-color: #391572;
+    margin: 1rem auto;
+    font-size : 8.5rem;
+    z-index : 1000;
+}
+
+#play:hover{
+    color : #00e4ff;
+}
+
+/* slide questionnaire */
+
+#slide-2{
+    background-color : #6cffdb;
+}
+
+#slide-3{
+    background-color : #fdffd2;
+}
+
+#slide-4{
+    background-color: #8df6ff;
+}
+
+#slide-5{
+    background-color: #d2ffe9;
+}
+
+#slide-6{
+    background-color: #ffffb0;
+}
+
+#slide-7{
+    background-color: #6cffdb;
+}
+
+#slide-8{
+    background-color: #fdffd2;
+}
+
+#slide-9{
+    background-color: #8df6ff;
+}
+
+#final{
+    background-color: #d2ffe9;
+}
+
+.slide h2{
+    font-size : 8rem;
+    text-align : center;
+    padding-top : 10rem;
+}
+
+.slide .command{
+    width : 85%;
+    margin : 0 auto;
+    text-align: center;
+    padding-top : 10rem;
+}
+
+.slide h4{
+    font-size : 4.5rem;
+	min-height: 9.8rem;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.command ul li{
+    float : left;
+    width : 20%;
+    margin : 0 2.7rem;
+}
+
+.slide.active .command ul li:hover{
+    cursor : pointer;
+	text-shadow: 0.15em 0.15em 0.1em #DDD;
+}
+
+.command figcaption p{
+    width : 100%;
+}
+
+/* slide JCVD */
+#JCVD{
+    margin-top : 2.5rem;
+    text-align : center;
+}
+
+#slide-9 h2{
+    padding-top : 0;
+}
+
+#slide-9 li{
+    display : box;
+    display : -moz-box;
+    display : -ie-box;
+    display : -webkit-box;
+    box-pack : center;
+    -moz-box-pack : center;
+    -ie-box-pack : center;
+    -webkit-box-pack : center;
+    box-align : center;
+    -moz-box-align : center;
+    -ie-box-align : center;
+    -webkit-box-align : center;
+    width : 23rem;
+    height : 23rem;
+    margin : 0 4rem;
+    background-color: #ddfcff;
+    border-radius : 50%;
+}
+
+#slide-9 .command{
+    padding-top : 5rem;
+}
+
+#slide-9 h4{
+    margin : 0 auto;
+    text-align: center;
+    font-size : 3.2rem;
+    max-width : 90%;
+}
+
+/* slide result */
+#final{
+    display : none;
+    opacity : 0;
+}
+
+#final h2{
+   padding-top : 5rem;
+}
+
+#final .result *{
+    max-width : 90%;
+    margin : 0 auto;
+    text-align : center;
+    line-height : 3.8rem;
+}
+
+#final .result{
+    display : box;
+    display : -moz-box;
+    display : -ie-box;
+    display : -webkit-box;
+    box-pack : center;
+    -moz-box-pack : center;
+    -ie-box-pack : center;
+    -webkit-box-pack : center;
+    box-align : center;
+    -moz-box-align : center;
+    -ie-box-align : center;
+    -webkit-box-align : center;
+    width : 32rem;
+    height : 32rem;
+    border-radius : 50%;
+    position : absolute;
+}
+
+#final h4{
+    font-size : 3.4rem;
+}
+
+#journal{
+    background-color : #bdff69;
+    top : 15rem;
+    left : 10rem;
+}
+
+#da{
+    background-color : #e0fe7C;
+    top : 55rem;
+    left : 10rem;
+}
+
+#dev{
+    background-color : #79FDE7;
+    top : 15rem;
+    right : 10rem;
+}
+
+#motion{
+    background-color : #D07E58;
+    top : 55rem;
+    right : 10rem;
+}
+
+#social-links{
+    position : absolute;
+    bottom : 10rem;
+    left : 60rem;
+}
+
+/* animation validation question */
+
+.choice-validate{
+    text-shadow: 0.15em 0.15em 0.1em #DDD;
+}
+
+.pills{
+    width : 100px;
+    height : 100px;
+    position : absolute;
+	-moz-transition: all 0.9s ease-in;
+    -webkit-transition: all 0.9s ease-in;
+    transition: all 0.9s ease-in;
+}
+
+.pills img{
+    width : 100px;
+    height : 100px;
+}
+
+/* nav */
+
+#link-bar{
+    position : fixed;
+    top : 25rem;
+    left : 25rem;
+    opacity : 0;
+    z-index : 100000000;
+	-moz-transition: all 1s ease-in;
+    -webkit-transition: all 1s ease-in;
+    transition: all 1s ease-in;
+}
+
+#link-bar li{
+    background-color : white;
+    width : 2.5rem;
+    height : 2.5rem;
+    border-radius : 50%;
+    cursor : pointer;
+    margin : 1rem;
+    border-color : 1px solid #AAA;
+}
+
+#link-bar li:hover{
+    background-color : #391572;
+}
+
+#link-bar li.slide-active{
+    background-color : #391572;
+}
+
+#link-bar li.form-active{
+    border : 1px solid black;
+}

@@ -1,0 +1,91 @@
+html{font-size: 62.5%;}
+/* 
+* PROPRIETE GENERALE 
+*/
+body{
+	font-size: 1.5rem;
+	font-family: 'Voltaire', Verdana, sans-serif;
+	/* ligature */
+	-moz-font-feature-settings: "liga=1, dlig=1"; 
+	-moz-font-feature-settings: "liga", "dlig"; /* pour FF 15+ */
+	-ms-font-feature-settings: "liga", "dlig"; 
+	-o-font-feature-settings: "liga", "dlig"; 
+	-webkit-font-feature-settings: "liga", "dlig"; 
+	font-feature-settings: "liga", "dlig";
+	text-rendering: optimizeLegibility;
+	-webkit-font-smoothing: subpixel-antialiased;
+	text-shadow: 0 0 -1px rgba(0,0,0,0.03);
+}
+		
+p, h1, h2, h3, li, a, textarea, input{
+    font-family: 'Voltaire', Verdana, sans-serif;
+	text-rendering: optimizeLegibility;
+	-webkit-font-smoothing: subpixel-antialiased;
+	text-shadow: 0 0 -1px rgba(0,0,0,0.03);
+	-moz-transform: translate3d(0,0,0);
+	-webkit-transform: translate3d(0,0,0);
+	-o-transform: translate3d(0,0,0);
+	-ms-transform: translate3d(0,0,0);
+	transform: translate3d(0,0,0);
+}
+
+h1{
+	font-size: 8.5rem;
+}
+
+h2{
+	font-size: 4.2rem;
+}
+
+h3{
+	font-size: 3.4rem;
+	line-height: 3.8rem;
+}
+
+p{
+	font-size: 2.4rem;
+	width: 60ex;
+	line-height: 3rem;
+	-webkit-hyphens: auto;
+	-moz-hyphens: auto;
+	-ms-hyphens: auto;
+	-o-hyphens: auto;
+	hyphens: auto;
+}
+
+li{
+	-webkit-hyphens: auto;
+	-moz-hyphens: auto;
+	-ms-hyphens: auto;
+	-o-hyphens: auto;
+	hyphens: auto;
+}
+
+a{
+	text-decoration : none;
+}
+
+strong{
+	font-weight : bold;
+}
+
+em{
+	font-style : italic;
+}
+
+nav>a{
+	font-size : 2.2rem;
+}
+
+a:hover{
+	text-decoration : none;
+}
+
+.clear{
+	clear : both;
+}
+
+.mobile{
+    position : fixed;
+    z-index : 10000;
+}

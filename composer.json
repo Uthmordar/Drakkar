@@ -1,0 +1,15 @@
+{
+    "name": "drakkar/framework",
+    "description": "Drakkar pre framework",
+    "require": {
+        "symfony/yaml": "~2.6",
+        "twig/twig": "~1.16"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Tanguy",
+            "email": "tanguyrygodin@gmail.com"
+        }
+    ]
+}
