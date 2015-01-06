@@ -1,4 +1,4 @@
-![Build Status]
+![Build Status](https://travis-ci.org/Uthmordar/Drakkar)
 # Drakkar
 ## Requirements
 * PHP >=5.4
