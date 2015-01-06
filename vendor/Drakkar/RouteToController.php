@@ -22,7 +22,8 @@ class RouteToController{
         self::$method=substr($route, strrpos($route, '->')+2);  
     }
     /**
-     * Load uri template
+     * Load Uri template
+     * @return \vendor\Drakkar\
      */
     public static function loadController(){
         $controller=new self::$controller;

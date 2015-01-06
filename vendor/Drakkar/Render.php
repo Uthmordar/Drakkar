@@ -11,15 +11,16 @@ class Render{
      * @param \vendors\Bloom\Path $path
      */
     public static function initRender($config, Path $path){
-            self::$config=$config;
-            self::$path=$path;
-            require_once $path->getPath('vendors') . 'twig/twig/lib/Twig/Autoloader.php';
-            \Twig_Autoloader::register();
-            $loader=new \Twig_Loader_Filesystem(PATH_APP . 'views');
-            self::$twig=new \Twig_Environment($loader);
+        self::$config=$config;
+        self::$path=$path;
+        require_once $path->getPath('vendors') . 'twig/twig/lib/Twig/Autoloader.php';
+        \Twig_Autoloader::register();
+        $loader=new \Twig_Loader_Filesystem(PATH_APP . 'views');
+        self::$twig=new \Twig_Environment($loader);
     }
     /**
      * render template
+     * @param \vendor\Drakkar\Controller $controller
      */
     public static function render(Controller $controller){
         $layout = self::$twig->loadTemplate($controller->getTemplate());

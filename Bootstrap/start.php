@@ -3,11 +3,19 @@ use Bootstrap\Autoload;
 $autoload = new Autoload;
 
 use App\configs\Config;
-$config = new Config(require_once PATH_CONFIG . 'app.php');
+try{
+    $config = new Config(require_once PATH_CONFIG . 'app.php');
+}catch(\RuntimeException $e){
+    var_dump($e->getMessage());die();
+}
 
 use vendor\Drakkar\Path;
-$path = new Path($arrayPath);
-
+try{
+    $path = new Path($arrayPath);
+}catch(\RuntimeException $e){
+    var_dump($e->getMessage());die();
+}
+    
 use vendor\Drakkar\Router;
 require_once PATH_APP . 'Route.php';
 $arrayRoute = Router::getRoute($config->getConfig('url'), $path->getUrl());

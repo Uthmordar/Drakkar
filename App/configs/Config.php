@@ -5,20 +5,19 @@ class Config{
     private $config = [];
     /**
      * 
-     * @param type $name
+     * @param type $config
      * @return string
      */    
     public function __construct($config){
-        try{
-            if(!is_array($config))
-                throw new Exception('Erreur de format dans le fichier de config.');     
-            $this->config = $config;
-        } catch (Exception $ex){
+        if(!is_array($config)){
+            throw new \RuntimeException('Erreur de format dans le fichier de config.');
         }
+        $this->config = $config;
     }
     public function getConfig($name){
-        if(isset($this->config[$name]))
+        if(isset($this->config[$name])){
             return $this->config[$name];
+        }
         return '';
     }
 }

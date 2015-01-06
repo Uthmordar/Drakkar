@@ -29,9 +29,14 @@ class Router{
     public static function chooseRoute($domain, $url){
         $term=substr($url, strrpos($url, $domain) . strlen($domain));
         foreach(self::$routes as $route=>$controller){
-            if($route==$term)
+            if($route==$term){
                 return ['route'=>$route, 'controller'=>$controller];
+            }
         }
         return ['route'=>'404.php', 'controller'=>false];
+    }
+    
+    public static function errorConfig($msg){
+        return ['route'=>'error.php', 'message'=>$msg];
     }
 }

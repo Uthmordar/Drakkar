@@ -14,13 +14,13 @@ define('PATH_JS', 'assets/js/');
 define('PATH_VENDORS', '../vendor/');
 
 $arrayPath=array(
-	'app'=>PATH_APP,
-	'config'=>PATH_CONFIG,
-	'assets'=>PATH_ASSETS,
-	'image'=>PATH_IMAGE,
-	'css'=>PATH_CSS,
-	'js'=>PATH_JS,
-	'vendors'=>PATH_VENDORS
+    'app'=>PATH_APP,
+    'config'=>PATH_CONFIG,
+    'assets'=>PATH_ASSETS,
+    'image'=>PATH_IMAGE,
+    'css'=>PATH_CSS,
+    'js'=>PATH_JS,
+    'vendors'=>PATH_VENDORS
 );
 // -------- fin bootstrap
 require_once 'start.php';
