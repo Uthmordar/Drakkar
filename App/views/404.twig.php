@@ -1,16 +1,8 @@
-{% include('includes/header.twig.php') %}
-</head>
-<body>
-<!-- HEADER -->
-	<header>
+{% extends "layout.twig.php" %}
 
-	</header>
-	<!-- CONTENT -->
-	<div id='wrapper'>
-            Erreur 404. Cette page n'existe pas.
-	</div>
-	<!-- FOOTER -->
-	<footer>
-	</footer>
-</body>
-</html>
+
+{% block header %}
+    <div id='wrapper'>
+        Erreur 404. Cette page n'existe pas.
+    </div>
+{% endblock %}

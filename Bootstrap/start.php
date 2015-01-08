@@ -2,7 +2,8 @@
 use Bootstrap\Autoload;
 $autoload = new Autoload;
 
-use vendor\Drakkar\Router;
+use vendor\Drakkar\Router\Router;
+$router=new Router();
 require_once PATH_APP . 'Route.php';
 
 use App\configs\Config;
@@ -18,14 +19,14 @@ try{
 }catch(\RuntimeException $e){
     var_dump($e->getMessage());die();
 }
-    
-$arrayRoute = Router::getRoute($config->getConfig('url'), $path->getUrl());
-if($arrayRoute['route']=='404.php'){
-    var_dump('Erreur 404'); die();
+try{
+    $route=$router->getRoute($path->getUrl());
+}catch(RuntimeException $e){
+    var_dump($e->getMessage());die();
 }
 
 use vendor\Drakkar\RouteToController;
-$controller=RouteToController::initRoute($arrayRoute['controller']);
+$controller=RouteToController::initRoute($route);
 if(!$controller){
     var_dump('Erreur chargement');die();
 }

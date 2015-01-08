@@ -6,4 +6,10 @@ class Home extends vendor\Drakkar\Controller{
         $this->setArgs(array());
         return true;
     }
+    public function show404(){
+        $this->setTemplate('layout.twig.php');
+        $this->setPage('404.twig.php');
+        $this->setArgs(array());
+        return true;
+    }
 }
