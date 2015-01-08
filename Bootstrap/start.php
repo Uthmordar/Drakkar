@@ -2,6 +2,9 @@
 use Bootstrap\Autoload;
 $autoload = new Autoload;
 
+use vendor\Drakkar\Router;
+require_once PATH_APP . 'Route.php';
+
 use App\configs\Config;
 try{
     $config = new Config(require_once PATH_CONFIG . 'app.php');
@@ -16,8 +19,6 @@ try{
     var_dump($e->getMessage());die();
 }
     
-use vendor\Drakkar\Router;
-require_once PATH_APP . 'Route.php';
 $arrayRoute = Router::getRoute($config->getConfig('url'), $path->getUrl());
 if($arrayRoute['route']=='404.php'){
     var_dump('Erreur 404'); die();

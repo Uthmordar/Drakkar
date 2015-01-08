@@ -4,7 +4,7 @@
 	"keywords": ["framework", "drakkar"],
     "require": {
         "symfony/yaml": "~2.6",
-        "twig/twig": "~1.16",
+		"twig/twig": "~1.16",
 		"swiftmailer/swiftmailer": "dev-master"
     },
     "license": "MIT",

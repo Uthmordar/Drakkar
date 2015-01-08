@@ -37,6 +37,9 @@ class Router{
     }
     
     public static function errorConfig($msg){
-        return ['route'=>'error.php', 'message'=>$msg];
+        $this->setTemplate('error.twig.php');
+        $this->setArgs(array('msg'=>$msg));
+        die();
+        return false;
     }
 }

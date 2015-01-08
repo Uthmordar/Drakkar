@@ -26,4 +26,12 @@ class Render{
         $layout = self::$twig->loadTemplate($controller->getTemplate());
         self::$twig->display($controller->getPage(), array('layout' => $layout, 'config'=>self::$config, 'path'=>self::$path));
     }
+    
+    public static function renderError($msg){
+        
+    }
+    
+    public static function render404(){
+        
+    }
 }
