@@ -1,37 +1,37 @@
 <?php
-namespace vendor\Drakkar;
 
 class Render{
-    private static $config;
-    private static $path;
-    private static $twig;
+    private $config;
+    private $path;
+    private $twig;
     /**
      * get global object conf & path => load object
-     * @param \vendors\Bloom\Config $config
-     * @param \vendors\Bloom\Path $path
+     * @param Config $config
+     * @param Path $path
      */
-    public static function initRender($config, Path $path){
-        self::$config=$config;
-        self::$path=$path;
+    public function __construct($config, Path $path){
+        $this->config=$config;
+        $this->path=$path;
         require_once $path->getPath('vendors') . 'twig/twig/lib/Twig/Autoloader.php';
         \Twig_Autoloader::register();
         $loader=new \Twig_Loader_Filesystem(PATH_APP . 'views');
-        self::$twig=new \Twig_Environment($loader);
-    }
-    /**
-     * render template
-     * @param \vendor\Drakkar\Controller $controller
-     */
-    public static function render(Controller $controller){
-        $layout = self::$twig->loadTemplate($controller->getTemplate());
-        self::$twig->display($controller->getPage(), array('layout' => $layout, 'config'=>self::$config, 'path'=>self::$path));
+        $this->twig=new \Twig_Environment($loader);
     }
     
-    public static function renderError($msg){
+    /**
+     * render template
+     * @param Controller $controller
+     */
+    public function render($controller){
+        $layout=$this->twig->loadTemplate($controller->getTemplate());
+        $this->twig->display($controller->getPage(), array('layout' => $layout, 'config'=>$this->config, 'path'=>$this->path));
+    }
+    
+    public function renderError($msg){
         
     }
     
-    public static function render404(){
+    public function render404(){
         
     }
 }

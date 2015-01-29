@@ -1,5 +1,5 @@
 <?php
-namespace vendor\Drakkar\Interfaces;
+namespace Interfaces;
 
 interface iRoutable{
     public function getController();

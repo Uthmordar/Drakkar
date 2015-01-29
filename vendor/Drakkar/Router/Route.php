@@ -1,6 +1,6 @@
 <?php
-namespace vendor\Drakkar\Router;
-use vendor\Drakkar\Interfaces\iRoutable;
+namespace Router;
+use Interfaces\iRoutable;
 
 class Route implements iRoutable{
     protected $pattern;

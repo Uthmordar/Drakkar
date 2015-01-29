@@ -1,5 +1,4 @@
 <?php 
-namespace vendor\Drakkar;
 
 class Controller{
     private $template;

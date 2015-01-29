@@ -2,7 +2,6 @@
 require_once 'Autoload.php';
 require_once __DIR__ . '/../vendor/autoload.php';
 
-
 define('PATH_APP', '../App/');
 define('PATH_CONFIG', PATH_APP . 'configs/');
 //définition du chemin d'accès au dossier d'images

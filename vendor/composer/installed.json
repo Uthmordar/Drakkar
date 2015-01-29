@@ -1,24 +1,24 @@
 [
     {
         "name": "symfony/yaml",
-        "version": "v2.6.1",
-        "version_normalized": "2.6.1.0",
+        "version": "v2.6.3",
+        "version_normalized": "2.6.3.0",
         "target-dir": "Symfony/Component/Yaml",
         "source": {
             "type": "git",
             "url": "https://github.com/symfony/Yaml.git",
-            "reference": "3346fc090a3eb6b53d408db2903b241af51dcb20"
+            "reference": "82462a90848a52c2533aa6b598b107d68076b018"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/symfony/Yaml/zipball/3346fc090a3eb6b53d408db2903b241af51dcb20",
-            "reference": "3346fc090a3eb6b53d408db2903b241af51dcb20",
+            "url": "https://api.github.com/repos/symfony/Yaml/zipball/82462a90848a52c2533aa6b598b107d68076b018",
+            "reference": "82462a90848a52c2533aa6b598b107d68076b018",
             "shasum": ""
         },
         "require": {
             "php": ">=5.3.3"
         },
-        "time": "2014-12-02 20:19:20",
+        "time": "2015-01-03 15:33:07",
         "type": "library",
         "extra": {
             "branch-alias": {
@@ -50,27 +50,27 @@
     },
     {
         "name": "twig/twig",
-        "version": "v1.16.3",
-        "version_normalized": "1.16.3.0",
+        "version": "v1.18.0",
+        "version_normalized": "1.18.0.0",
         "source": {
             "type": "git",
             "url": "https://github.com/twigphp/Twig.git",
-            "reference": "6dc11a1e8ecfc30e2c68aaeb218148409d8e68af"
+            "reference": "4cf7464348e7f9893a93f7096a90b73722be99cf"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/twigphp/Twig/zipball/6dc11a1e8ecfc30e2c68aaeb218148409d8e68af",
-            "reference": "6dc11a1e8ecfc30e2c68aaeb218148409d8e68af",
+            "url": "https://api.github.com/repos/twigphp/Twig/zipball/4cf7464348e7f9893a93f7096a90b73722be99cf",
+            "reference": "4cf7464348e7f9893a93f7096a90b73722be99cf",
             "shasum": ""
         },
         "require": {
             "php": ">=5.2.4"
         },
-        "time": "2014-12-25 19:58:19",
+        "time": "2015-01-25 17:32:08",
         "type": "library",
         "extra": {
             "branch-alias": {
-                "dev-master": "1.16-dev"
+                "dev-master": "1.18-dev"
             }
         },
         "installation-source": "dist",
@@ -114,12 +114,12 @@
         "source": {
             "type": "git",
             "url": "https://github.com/swiftmailer/swiftmailer.git",
-            "reference": "e29c7b692bae6610b137670d6749151fd6e41608"
+            "reference": "db95cfa68a8bc91d1c54f75c416f481c9a8bd100"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/swiftmailer/swiftmailer/zipball/e29c7b692bae6610b137670d6749151fd6e41608",
-            "reference": "e29c7b692bae6610b137670d6749151fd6e41608",
+            "url": "https://api.github.com/repos/swiftmailer/swiftmailer/zipball/db95cfa68a8bc91d1c54f75c416f481c9a8bd100",
+            "reference": "db95cfa68a8bc91d1c54f75c416f481c9a8bd100",
             "shasum": ""
         },
         "require": {
@@ -128,7 +128,7 @@
         "require-dev": {
             "mockery/mockery": "~0.9.1"
         },
-        "time": "2014-12-05 14:17:46",
+        "time": "2015-01-18 13:49:36",
         "type": "library",
         "extra": {
             "branch-alias": {

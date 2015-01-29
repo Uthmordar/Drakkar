@@ -1,5 +1,5 @@
 <?php
-class Home extends vendor\Drakkar\Controller{
+class Home extends Controller{
     public function showHome(){
         $this->setTemplate('layout.twig.php');
         $this->setPage('home.twig.php');
