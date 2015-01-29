@@ -4,7 +4,7 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "c0be329dbf02646db18087de1eed5306",
+    "hash": "a65d3c336abc2adff7bc469ae8d52a65",
     "packages": [
         {
             "name": "swiftmailer/swiftmailer",
