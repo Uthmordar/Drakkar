@@ -14,12 +14,13 @@ try{
 }
 
 try{
-    $path = new Path($arrayPath);
+    Path::newInstance();
+    Path::initPath($arrayPath);
 }catch(\RuntimeException $e){
     var_dump($e->getMessage());die();
 }
 try{
-    $route=$router->getRoute($path->getUrl());
+    $route=$router->getRoute(Path::getUrl());
 }catch(RuntimeException $e){
     var_dump($e->getMessage());die();
 }
@@ -29,5 +30,5 @@ if(!$controller){
     var_dump('Erreur chargement');die();
 }
 
-$render=new Render($config, $path);
+$render=new Render($config, Path::getInstance());
 $render->render($controller);
