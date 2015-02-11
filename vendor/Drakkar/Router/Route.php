@@ -7,6 +7,7 @@ class Route implements iRoutable{
     protected $controller;
     protected $action;
     protected $params;
+    protected $method;
     
     /**
      * @param array $route
@@ -15,12 +16,23 @@ class Route implements iRoutable{
         if(empty($route['connect'])){
             throw new \RuntimeException('Access controller novalidate');
         }
+        $this->setMethod($route['method']);
         $this->setConnect($route['connect']);
         $this->setPattern($route['pattern']);
         if(!empty($route['params'])){
             $params=explode(',',$route['params']);
             $this->setParams($params);
         }
+    }
+    
+    /**
+     * 
+     * @param type $method
+     * @return \Router\Route
+     */
+    public function setMethod($method){
+        $this->method=$method;
+        return $this;
     }
     
     /**
@@ -83,6 +95,14 @@ class Route implements iRoutable{
     }
     
     /**
+     * 
+     * @return type
+     */
+    public function getMethod(){
+        return $this->method;
+    }
+    
+    /**
      * @return type
      */
     public function getAction(){
@@ -118,7 +138,7 @@ class Route implements iRoutable{
      * @return boolean
      */
     public function isMatch($url){
-        $check=preg_match("/" . $this->getPattern() . "$/", $url, $matches);
+        $check=preg_match("/" . $this->getPattern() . "$/", $url[0], $matches);
         if(!$check){
             return false;
         }

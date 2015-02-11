@@ -14,4 +14,8 @@ class Home{
     public function show404(){
         View::create('layout.twig.php', '404.twig.php', []);
     }
+    
+    public function postHome(){
+        View::create('layout.twig.php', '404.twig.php', []);
+    }
 }

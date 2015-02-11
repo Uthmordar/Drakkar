@@ -2,8 +2,7 @@
 use Bootstrap\Autoload;
 $autoload=new Autoload;
 
-use Router\Router;
-$router=new Router();
+use Facade\Support\Router;
 
 Path::newInstance();
 View::newInstance();
@@ -24,7 +23,7 @@ $render=new Render($config, Path::getInstance());
 
 try{
     require_once PATH_APP . 'Route.php';
-    $route=$router->getRoute(Path::getUrl());
+    $route=Router::getRoute(Path::getUrl());
 }catch(RuntimeException $e){
     $render->renderError($e);
 }

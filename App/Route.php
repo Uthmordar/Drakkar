@@ -1,6 +1,8 @@
 <?php
 namespace App;
-use Router\Route;
+use Facade\Support\Router;
 
-$router->addRoute(new Route(['pattern' => '\/error.php', 'connect' => 'Home:show404']));
-$router->addRoute(new Route(['pattern' => '\/', 'connect' => 'Home:showHome']));
+Router::get(['pattern' => '\/error.php', 'connect' => 'Home:show404']);
+Router::get(['pattern' => '\/', 'connect' => 'Home:showHome']);
+
+Router::post(['pattern' => '\/', 'connect' => 'Home:postHome']);
