@@ -4,6 +4,7 @@ class Render{
     private $config;
     private $path;
     private $twig;
+    
     /**
      * get global object conf & path => load object
      * @param Config $config
@@ -22,16 +23,19 @@ class Render{
      * render template
      * @param Controller $controller
      */
-    public function render($controller){
-        $layout=$this->twig->loadTemplate($controller->getTemplate());
-        $this->twig->display($controller->getPage(), array('layout' => $layout, 'config'=>$this->config, 'path'=>$this->path));
+    public function render(){
+        $layout=$this->twig->loadTemplate(View::getTemplate());
+        $args=['layout' => $layout, 'config'=>$this->config, 'path'=>$this->path];
+        $args=array_merge($args, View::getArgs());
+        $this->twig->display(View::getPage(), $args);
     }
     
-    public function renderError($msg){
-        
-    }
-    
-    public function render404(){
-        
+    /**
+     * display errors
+     * @param type $msg
+     */
+    public function renderError($error){
+        $this->twig->display('error.twig.php', ['msg'=>$error->getMessage()]);
+        die();
     }
 }

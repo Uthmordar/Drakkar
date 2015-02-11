@@ -7,7 +7,7 @@
 	</header>
 	<!-- CONTENT -->
 	<div id='wrapper'>
-            Une erreur est survenue : {{error.msg}}
+            Une erreur est survenue : {{msg}}
 	</div>
 	<!-- FOOTER -->
 	<footer>

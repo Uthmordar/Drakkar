@@ -1,15 +1,17 @@
 <?php
-class Home extends Controller{
+
+class Home{
+    /**
+     * view Home
+     */
     public function showHome(){
-        $this->setTemplate('layout.twig.php');
-        $this->setPage('home.twig.php');
-        $this->setArgs(array());
-        return true;
+        View::create('layout.twig.php', 'home.twig.php', []);
     }
+    
+    /**
+     * 
+     */
     public function show404(){
-        $this->setTemplate('layout.twig.php');
-        $this->setPage('404.twig.php');
-        $this->setArgs(array());
-        return true;
+        View::create('layout.twig.php', '404.twig.php', []);
     }
 }

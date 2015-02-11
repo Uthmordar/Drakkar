@@ -4,7 +4,9 @@ $autoload=new Autoload;
 
 use Router\Router;
 $router=new Router();
-require_once PATH_APP . 'Route.php';
+
+Path::newInstance();
+View::newInstance();
 
 use App\configs\Config;
 try{
@@ -14,21 +16,22 @@ try{
 }
 
 try{
-    Path::newInstance();
     Path::initPath($arrayPath);
 }catch(\RuntimeException $e){
     var_dump($e->getMessage());die();
 }
+$render=new Render($config, Path::getInstance());
+
 try{
+    require_once PATH_APP . 'Route.php';
     $route=$router->getRoute(Path::getUrl());
 }catch(RuntimeException $e){
-    var_dump($e->getMessage());die();
+    $render->renderError($e);
 }
 
 $controller=RouteToController::initRoute($route);
 if(!$controller){
-    var_dump('Erreur chargement');die();
+    $render->renderError('Erreur chargement');
 }
 
-$render=new Render($config, Path::getInstance());
-$render->render($controller);
+$render->render();

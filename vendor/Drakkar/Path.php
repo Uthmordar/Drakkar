@@ -1,6 +1,6 @@
 <?php
 
-class Path extends Singleton implements \Interfaces\iPath{
+class Path implements \Interfaces\iPath, \Interfaces\iSingleton{
     private static $path=[];
     private static $instance = null;
 
