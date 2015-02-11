@@ -7,8 +7,8 @@ class Route implements iRoutable{
     protected $controller;
     protected $action;
     protected $params;
+    
     /**
-     * 
      * @param array $route
      */
     public function __construct(array $route){
@@ -22,8 +22,8 @@ class Route implements iRoutable{
             $this->setParams($params);
         }
     }
+    
     /**
-     * 
      * @param type $connect
      * @throws Exception
      */
@@ -34,8 +34,8 @@ class Route implements iRoutable{
         }
         $this->setController($split[0])->setAction($split[1]);
     }
+    
     /**
-     * 
      * @param type $action
      * @return \Router\Route
      */
@@ -43,8 +43,8 @@ class Route implements iRoutable{
         $this->action=$action;
         return $this;
     }
+    
     /**
-     * 
      * @param type $controller
      * @return \Router\Route
      */
@@ -52,8 +52,8 @@ class Route implements iRoutable{
         $this->controller=$controller;
         return $this;
     }
+    
     /**
-     * 
      * @param array $params
      * @return \Router\Route
      */
@@ -61,8 +61,8 @@ class Route implements iRoutable{
         $this->params=$params;
         return $this;
     }
+    
     /**
-     * 
      * @param type $pattern
      * @return \Router\Route
      * @throws RuntimeException
@@ -74,22 +74,22 @@ class Route implements iRoutable{
         $this->pattern=$pattern;
         return $this;
     }
+    
     /**
-     * 
      * @return type
      */
     public function getController(){
         return $this->controller;
     }
+    
     /**
-     * 
      * @return type
      */
     public function getAction(){
         return $this->action;
     }
+    
     /**
-     * 
      * @param type $matches
      * @return boolean
      */
@@ -105,15 +105,15 @@ class Route implements iRoutable{
             return $params;
         }
     }
+    
     /**
-     * 
      * @return type
      */
     public function getPattern(){
         return $this->pattern;
     }
+    
     /**
-     * 
      * @param type $url
      * @return boolean
      */

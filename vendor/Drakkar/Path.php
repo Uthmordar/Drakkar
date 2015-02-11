@@ -19,21 +19,17 @@ class Path implements \Interfaces\iPath, \Interfaces\iSingleton{
         return self::$instance;
     }
     /**
-     * @param type $name
-     * @return string path
-     */    
-    /*public function __construct($path){
-        if(!is_array($path)){
-            throw new \RuntimeException('Erreur de format dans le fichier de path.');
-        }
-        $this->path = $path;
-    }*/
+     * 
+     * @param type $path
+     * @throws \RuntimeException
+     */
     public static function initPath($path){
         if(!is_array($path)){
             throw new \RuntimeException('Erreur de format dans le fichier de path.');
         }
         self::$path = $path;
     }
+    
     /**
     * @param type $name
     * @return string path
@@ -44,6 +40,7 @@ class Path implements \Interfaces\iPath, \Interfaces\iSingleton{
         }
         return '';
     }
+    
     /**
     * @return string domain
     */
@@ -53,6 +50,7 @@ class Path implements \Interfaces\iPath, \Interfaces\iSingleton{
         }
         return '';
     }
+    
     /**
     * @return string current url
     */

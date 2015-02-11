@@ -2,7 +2,7 @@
 namespace Router;
 use Interfaces\iRoutable;
 
-class Router  extends \SplObjectStorage{
+class Router extends \SplObjectStorage{
     /**
      * 
      * @param \Interfaces\iRoutable $route

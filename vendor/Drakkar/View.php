@@ -20,6 +20,7 @@ class View implements \Interfaces\iSingleton, \Interfaces\iView{
         }
         return self::$instance;
     }
+    
     /**
      * create view
      * @param template
@@ -39,16 +40,19 @@ class View implements \Interfaces\iSingleton, \Interfaces\iView{
             self::setArgs($args);
         }
     }
+    
     /**
      * @param type $template
      * @return boolean
      */
+    
     protected static function setTemplate($template){
         if(strpos($template, '.twig.php')){
             return self::$template=$template;
         }
         return false;
     }
+    
     /**
      * @param type $page
      * @return boolean
@@ -59,6 +63,7 @@ class View implements \Interfaces\iSingleton, \Interfaces\iView{
         }
         return false;
     }
+    
     /**
      * 
      * @param type $args
@@ -70,6 +75,7 @@ class View implements \Interfaces\iSingleton, \Interfaces\iView{
         }
         return false;
     }
+    
     /**
      * 
      * @param type $template
@@ -78,6 +84,7 @@ class View implements \Interfaces\iSingleton, \Interfaces\iView{
     public static function getTemplate(){
         return self::$template;
     }
+    
     /**
      * 
      * @param type $page
@@ -86,6 +93,7 @@ class View implements \Interfaces\iSingleton, \Interfaces\iView{
     public static function getPage(){
         return self::$page;
     }
+    
     /**
      * 
      * @param type $args
