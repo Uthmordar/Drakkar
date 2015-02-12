@@ -18,7 +18,7 @@ class Drakkar{
     }
     
     public function setConfig(){
-        $this->config=new App\configs\Config(require_once PATH_CONFIG . 'app.php');
+        $this->config=new \Configs\Config(require_once PATH_CONFIG . 'app.php');
     }
 
     public function setPath($arrayPath){
