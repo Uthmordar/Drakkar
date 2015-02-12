@@ -10,13 +10,13 @@ class View implements \Interfaces\iSingleton, \Interfaces\iView{
     
     private function __clone(){}
 
-    public static function getInstance() {
+    public static function getInstance(){
         return self::$instance;
     }
 
-    public static function newInstance() {
-        if (self::$instance == null) {
-            self::$instance = new self();
+    public static function newInstance(){
+        if(self::$instance==null){
+            self::$instance=new self();
         }
         return self::$instance;
     }

@@ -8,13 +8,13 @@ class Path implements \Interfaces\iPath, \Interfaces\iSingleton{
     
     private function __clone(){}
 
-    public static function getInstance() {
+    public static function getInstance(){
         return self::$instance;
     }
 
-    public static function newInstance() {
-        if (self::$instance == null) {
-            self::$instance = new self();
+    public static function newInstance(){
+        if(self::$instance==null) {
+            self::$instance=new self();
         }
         return self::$instance;
     }
@@ -55,8 +55,10 @@ class Path implements \Interfaces\iPath, \Interfaces\iSingleton{
     * @return string current url
     */
     public static function getUrl(){
-        if($_SERVER['HTTP_HOST'] && $_SERVER['REQUEST_URI']){
-            return "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
+        $host=filter_input(INPUT_SERVER, $_SERVER['HTTP_HOST']);
+        $uri=filter_input(INPUT_SERVER, $_SERVER['REQUEST_URI']);
+        if($host && $uri){
+            return "http://" . $host . $uri;
         }
         return '';
     }
