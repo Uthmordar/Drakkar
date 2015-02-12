@@ -2,8 +2,6 @@
 use Bootstrap\Autoload;
 $autoload=new Autoload;
 
-Path::newInstance();
-
 use App\configs\Config;
 try{
     $config=new Config(require_once PATH_CONFIG . 'app.php');
@@ -16,6 +14,7 @@ try{
 }catch(\RuntimeException $e){
     var_dump($e->getMessage());die();
 }
+
 $render=new Render($config, Path::getInstance());
 
 try{

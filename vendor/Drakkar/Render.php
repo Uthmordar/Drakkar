@@ -13,7 +13,7 @@ class Render{
     public function __construct($config, \Interfaces\iPath $path){
         $this->config=$config;
         $this->path=$path;
-        require_once $path::getPath('vendors') . 'twig/twig/lib/Twig/Autoloader.php';
+        require_once $path->getPath('vendors') . 'twig/twig/lib/Twig/Autoloader.php';
         \Twig_Autoloader::register();
         $loader=new \Twig_Loader_Filesystem(PATH_APP . 'views');
         $this->twig=new \Twig_Environment($loader);
