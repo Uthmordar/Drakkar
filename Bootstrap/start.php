@@ -15,7 +15,9 @@ try{
     var_dump($e->getMessage());die();
 }
 
-$render=new Render($config, Path::getInstance());
+use Render\Render;
+$render=Render::newInstance();
+$render->init($config, Path::getInstance());
 
 try{
     require_once PATH_APP . 'Route.php';
