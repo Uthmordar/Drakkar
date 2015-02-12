@@ -2,20 +2,25 @@
 
 class Home{
     /**
-     * view Home
-     */
+    * view Home
+    */
     public function showHome(){
         View::create('layout.twig.php', 'home.twig.php', []);
     }
     
     /**
-     * 
-     */
+    * 
+    */
     public function show404(){
         View::create('layout.twig.php', '404.twig.php', []);
     }
     
     public function postHome(){
         View::create('layout.twig.php', '404.twig.php', []);
+    }
+    
+    public function article($id){
+        var_dump($id);
+        //View::create('layout.twig.php', '404.twig.php', []);
     }
 }

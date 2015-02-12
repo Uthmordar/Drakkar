@@ -24,7 +24,7 @@ class RouteToController{
     public static function loadController(){
         $controller=new self::$controller;
         $method=self::$method;
-        $controller->$method(self::$params);
+        call_user_func_array(array($controller, $method), self::$params);
         return $controller;
     }
 }

@@ -47,7 +47,7 @@ class Path implements \Interfaces\iPath, \Interfaces\iSingleton{
     * @return string domain
     */
     public function getDomain(){
-        $host=$_SERVER['HTTP_HOST'];
+        $host=filter_input(INPUT_SERVER, 'HTTP_HOST');
         if($host){
             return $host;
         }
@@ -58,8 +58,8 @@ class Path implements \Interfaces\iPath, \Interfaces\iSingleton{
     * @return string current url
     */
     public function getUrl(){
-        $host=filter_input(INPUT_SERVER, $_SERVER['HTTP_HOST']);
-        $uri=filter_input(INPUT_SERVER, $_SERVER['REQUEST_URI']);
+        $host=filter_input(INPUT_SERVER, 'HTTP_HOST');
+        $uri=filter_input(INPUT_SERVER, 'REQUEST_URI');
         if($host && $uri){
             return "http://" . $host . $uri;
         }

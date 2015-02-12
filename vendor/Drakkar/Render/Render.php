@@ -46,9 +46,9 @@ class Render implements \Interfaces\iSingleton, \Interfaces\iRender{
     }
     
     /**
-     * load template
-     * @return type
-     */
+    * load template
+    * @return type
+    */
     protected function generateTemplate(){
         $layout=$this->twig->loadTemplate(\View::getTemplate());
         $args=['layout' => $layout, 'config'=>$this->config, 'path'=>$this->path];
@@ -56,9 +56,9 @@ class Render implements \Interfaces\iSingleton, \Interfaces\iRender{
     }
     
     /**
-     * display errors
-     * @param type $msg
-     */
+    * display errors
+    * @param type $msg
+    */
     public function renderError($error){
         $this->twig->display('error.twig.php', ['msg'=>$error->getMessage()]);
         die();

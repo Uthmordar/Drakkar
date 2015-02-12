@@ -46,7 +46,6 @@ class View implements \Interfaces\iSingleton, \Interfaces\iView{
      * @param type $template
      * @return boolean
      */
-    
     protected function setTemplate($template){
         if(strpos($template, '.twig.php')){
             return $this->template=$template;

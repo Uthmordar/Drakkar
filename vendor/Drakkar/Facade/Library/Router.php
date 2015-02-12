@@ -61,7 +61,7 @@ class Router extends \SplObjectStorage{
     public function getRoute($url){
         foreach($this as $k){
             $matches=$k->isMatch($url);
-            $method=(filter_input(INPUT_SERVER, $_SERVER['REQUEST_METHOD']))? filter_input(INPUT_SERVER, $_SERVER['REQUEST_METHOD']) : 'GET';
+            $method=(filter_input(INPUT_SERVER, 'REQUEST_METHOD'))? filter_input(INPUT_SERVER, 'REQUEST_METHOD') : 'GET';
             if(!$matches || $method!=$k->getMethod()){
                 continue;
             }
