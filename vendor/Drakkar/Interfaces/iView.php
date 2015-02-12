@@ -2,5 +2,5 @@
 namespace Interfaces;
 
 interface iView{
-    public static function create();
+    public function create();
 }

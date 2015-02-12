@@ -2,10 +2,7 @@
 use Bootstrap\Autoload;
 $autoload=new Autoload;
 
-use Facade\Support\Router;
-
 Path::newInstance();
-View::newInstance();
 
 use App\configs\Config;
 try{

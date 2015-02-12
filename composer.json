@@ -17,7 +17,7 @@
     ],
     "autoload": {
         "psr-4": {
-            "": ["vendor/Drakkar/"]
+            "": ["vendor/Drakkar/", "vendor/Drakkar/Facade/Support"]
         }
     }
 }

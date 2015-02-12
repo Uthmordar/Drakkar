@@ -1,9 +1,10 @@
 <?php
+namespace Facade\Library;
 
 class View implements \Interfaces\iSingleton, \Interfaces\iView{
-    private static $template;
-    private static $page;
-    private static $args=[];
+    private $template;
+    private $page;
+    private $args=[];
     private static $instance = null;
     
     private function __construct(){}
@@ -28,16 +29,16 @@ class View implements \Interfaces\iSingleton, \Interfaces\iView{
      * @param args (facultative)
      * @throws Exception
      */
-    public static function create(){
-        $args=func_get_args();
-        if(!self::setTemplate($args[0])){
+    public function create(){
+        $args=func_get_args()[0];
+        if(!$this->setTemplate($args[0])){
             throw new \InvalidArgumentException('No template');
         }
-        if(!self::setPage($args[1])){
+        if(!$this->setPage($args[1])){
             throw new \InvalidArgumentException('No page');
         }
         if(!empty($args[2]) && is_array($args[2])){
-            self::setArgs($args);
+            $this->setArgs($args);
         }
     }
     
@@ -46,9 +47,9 @@ class View implements \Interfaces\iSingleton, \Interfaces\iView{
      * @return boolean
      */
     
-    protected static function setTemplate($template){
+    protected function setTemplate($template){
         if(strpos($template, '.twig.php')){
-            return self::$template=$template;
+            return $this->template=$template;
         }
         return false;
     }
@@ -57,9 +58,9 @@ class View implements \Interfaces\iSingleton, \Interfaces\iView{
      * @param type $page
      * @return boolean
      */
-    protected static function setPage($page){
+    protected function setPage($page){
         if(strpos($page, '.twig.php')){
-            return self::$page=$page;
+            return $this->page=$page;
         }
         return false;
     }
@@ -69,9 +70,9 @@ class View implements \Interfaces\iSingleton, \Interfaces\iView{
      * @param type $args
      * @return boolean
      */
-    protected static function setArgs($args){
+    protected function setArgs($args){
         if(is_array($args)){
-            return self::$args=$args;
+            return $this->args=$args;
         }
         return false;
     }
@@ -81,8 +82,8 @@ class View implements \Interfaces\iSingleton, \Interfaces\iView{
      * @param type $template
      * @return type
      */
-    public static function getTemplate(){
-        return self::$template;
+    public function getTemplate(){
+        return $this->template;
     }
     
     /**
@@ -90,8 +91,8 @@ class View implements \Interfaces\iSingleton, \Interfaces\iView{
      * @param type $page
      * @return type
      */
-    public static function getPage(){
-        return self::$page;
+    public function getPage(){
+        return $this->page;
     }
     
     /**
@@ -99,7 +100,7 @@ class View implements \Interfaces\iSingleton, \Interfaces\iView{
      * @param type $args
      * @return type
      */
-    public static function getArgs(){
-        return self::$args;
+    public function getArgs(){
+        return $this->args;
     }
 }
