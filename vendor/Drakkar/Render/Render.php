@@ -41,23 +41,42 @@ class Render implements \Interfaces\iSingleton, \Interfaces\iRender{
      * @param Controller $controller
      */
     public function render(){
-        $args=$this->generateTemplate();
-        $this->twig->display(\View::getPage(), $args);
+        if(\View::isTwig()){
+            $args=$this->generateTwigTemplate();
+            $this->twig->display(\View::getPage(), $args);
+        }else{
+            $args=$this->renderPage();
+        }
     }
     
     /**
     * load template
     * @return type
     */
-    protected function generateTemplate(){
+    protected function generateTwigTemplate(){
         $layout=$this->twig->loadTemplate(\View::getTemplate());
         $args=['layout' => $layout, 'config'=>$this->config, 'path'=>$this->path];
         return array_merge($args, \View::getArgs());
     }
     
     /**
+     * 
+     * @return type
+     */
+    protected function renderPage(){
+        $args=array_merge(['config'=>$this->config, 'path'=>$this->path], \View::getArgs());
+        require_once PATH_APP . '\views\\' . \View::getPage();
+        ob_start();
+        extract($args);
+        include PATH_APP . '\views\\' . \View::getPage();
+        $return=ob_get_clean();
+
+        return $return;
+    }
+    
+    /**
     * display errors
-    * @param type $msg
+    * @param type exception
     */
     public function renderError($error){
         $this->twig->display('error.twig.php', ['msg'=>$error->getMessage()]);

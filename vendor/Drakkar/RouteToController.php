@@ -3,7 +3,7 @@
 class RouteToController{
     private static $method;
     private static $controller;
-    private static $params;
+    private static $params=[];
     /**
      * init RouteToModel
      * @param type $route

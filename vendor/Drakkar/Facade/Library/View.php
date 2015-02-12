@@ -5,6 +5,7 @@ class View implements \Interfaces\iSingleton, \Interfaces\iView{
     private $template;
     private $page;
     private $args=[];
+    private $isTwig=false;
     private static $instance = null;
     
     private function __construct(){}
@@ -30,15 +31,15 @@ class View implements \Interfaces\iSingleton, \Interfaces\iView{
      * @throws Exception
      */
     public function create(){
-        $args=func_get_args()[0];
-        if(!$this->setTemplate($args[0])){
+        $args=func_get_args()[0][0];
+        if(!empty($args['layout']) && !$this->setTemplate($args['layout'])){
             throw new \InvalidArgumentException('No template');
         }
-        if(!$this->setPage($args[1])){
+        if(!$this->setPage($args['tpl'])){
             throw new \InvalidArgumentException('No page');
         }
-        if(!empty($args[2]) && is_array($args[2])){
-            $this->setArgs($args);
+        if(!empty($args['args']) && is_array($args['args'])){
+            $this->setArgs($args['args']);
         }
     }
     
@@ -54,11 +55,21 @@ class View implements \Interfaces\iSingleton, \Interfaces\iView{
     }
     
     /**
+     * 
+     * @return type
+     */
+    public function isTwig(){
+        return $this->isTwig;
+    }
+    /**
      * @param type $page
      * @return boolean
      */
     protected function setPage($page){
         if(strpos($page, '.twig.php')){
+            $this->isTwig=true;
+            return $this->page=$page;
+        }else if(strpos($page, '.php')){
             return $this->page=$page;
         }
         return false;
