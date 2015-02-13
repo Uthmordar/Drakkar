@@ -1,16 +1,16 @@
 <?php
 require_once 'Autoload.php';
-require_once __DIR__ . '/../vendor/autoload.php';
+require_once __DIR__ . DIRECTORY_SEPARATOR . '..' . DIRECTORY_SEPARATOR . 'vendor' . DIRECTORY_SEPARATOR . 'autoload.php';
 
-define('PATH_APP', '../App/');
-define('PATH_CONFIG', PATH_APP . 'configs/');
+define('PATH_APP', '..' . DIRECTORY_SEPARATOR . 'App' . DIRECTORY_SEPARATOR);
+define('PATH_CONFIG', PATH_APP . 'configs' . DIRECTORY_SEPARATOR);
 //définition du chemin d'accès au dossier d'images
-define('PATH_ASSETS', 'assets/');
-define('PATH_IMAGE', 'assets/images/');
-define('PATH_CSS', 'assets/css/');
-define('PATH_JS', 'assets/js/');
+define('PATH_ASSETS', 'assets' . DIRECTORY_SEPARATOR);
+define('PATH_IMAGE', 'assets'. DIRECTORY_SEPARATOR . 'images' . DIRECTORY_SEPARATOR);
+define('PATH_CSS', 'assets' . DIRECTORY_SEPARATOR . 'css' . DIRECTORY_SEPARATOR);
+define('PATH_JS', 'assets' . DIRECTORY_SEPARATOR . 'js' . DIRECTORY_SEPARATOR);
 
-define('PATH_VENDORS', '../vendor/');
+define('PATH_VENDORS', '..' . DIRECTORY_SEPARATOR . 'vendor' . DIRECTORY_SEPARATOR);
 
 $arrayPath=array(
     'app'=>PATH_APP,

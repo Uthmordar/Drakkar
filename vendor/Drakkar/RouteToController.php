@@ -14,7 +14,7 @@ class RouteToController{
         if(!empty($route['params'])){
             self::$params=$route['params'];
         }
-        require_once PATH_APP . '\controllers\\' . self::$controller . '.php';
+        require_once PATH_APP . DIRECTORY_SEPARATOR . 'controllers' . DIRECTORY_SEPARATOR . self::$controller . '.php';
         return self::loadController();
     }
     /**

@@ -30,7 +30,7 @@ class Render implements \Interfaces\iSingleton, \Interfaces\iRender{
     public function init($config, \Interfaces\iPath $path){
         $this->config=$config;
         $this->path=$path;
-        require_once $path->getPath('vendors') . 'twig/twig/lib/Twig/Autoloader.php';
+        require_once $path->getPath('vendors') . 'twig' . DIRECTORY_SEPARATOR . 'twig' . DIRECTORY_SEPARATOR . 'lib' . DIRECTORY_SEPARATOR . 'Twig' . DIRECTORY_SEPARATOR . 'Autoloader.php';
         \Twig_Autoloader::register();
         $loader=new \Twig_Loader_Filesystem(PATH_APP . 'views');
         $this->twig=new \Twig_Environment($loader);
@@ -65,10 +65,10 @@ class Render implements \Interfaces\iSingleton, \Interfaces\iRender{
      */
     protected function renderPage(){
         $args=array_merge(['config'=>$this->config, 'path'=>$this->path], \View::getArgs());
-        require_once PATH_APP . '\views\\' . \View::getPage();
+        require_once PATH_APP . DIRECTORY_SEPARATOR . 'views' . DIRECTORY_SEPARATOR . \View::getPage();
         ob_start();
         extract($args);
-        include PATH_APP . '\views\\' . \View::getPage();
+        include PATH_APP . DIRECTORY_SEPARATOR .'views' . DIRECTORY_SEPARATOR . \View::getPage();
         $return=ob_get_clean();
 
         return $return;

@@ -1,0 +1,10 @@
+default: mysql
+connections: 
+    mysql:
+        driver: mysql
+        host: localhost
+        database: drakkar
+        username: root
+        password: 
+        charset: utf8
+        collation: utf8_general_ci

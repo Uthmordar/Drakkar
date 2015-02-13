@@ -23,21 +23,21 @@
         <style>
             @font-face {
                 font-family: "Varela";
-                src: url("{{path.getPath('assets')}}fonts/Varela/varela-regular-webfont.eot"); /* Mode de compatibilité IE9 */
-                src: url("{{path.getPath('assets')}}fonts/Varela/varela-regular-webfont.eot?#iefix") format('embedded-opentype'), 
-                    url("{{path.getPath('assets')}}fonts/Varela/varela-regular-webfont.woff") format('woff'), 
-                    url("{{path.getPath('assets')}}fonts/Varela/varela-regular-webfont.svg#Varela") format('svg'), 
-                    url("{{path.getPath('assets')}}fonts/Varela/varela-regular-webfont.ttf") format('truetype'); /* Safari, Android, iOS */
+                src: url("{{path.getPath('assets')}}/fonts/Varela/varela-regular-webfont.eot"); /* Mode de compatibilité IE9 */
+                src: url("{{path.getPath('assets')}}/fonts/Varela/varela-regular-webfont.eot?#iefix") format('embedded-opentype'), 
+                    url("{{path.getPath('assets')}}/fonts/Varela/varela-regular-webfont.woff") format('woff'), 
+                    url("{{path.getPath('assets')}}/fonts/Varela/varela-regular-webfont.svg#Varela") format('svg'), 
+                    url("{{path.getPath('assets')}}/fonts/Varela/varela-regular-webfont.ttf") format('truetype'); /* Safari, Android, iOS */
                 font-weight: 'normal';
                 font-style: 'normal';
             }
             @font-face {
                 font-family: "Voltaire";
-                src: url("{{path.getPath('assets')}}fonts/Voltaire/voltaire-regular-webfont.eot"); /* Mode de compatibilité IE9 */
-                src: url("{{path.getPath('assets')}}fonts/Voltaire/voltaire-regular-webfont.eot?#iefix") format('embedded-opentype'), 
-                    url("{{path.getPath('assets')}}fonts/Voltaire/voltaire-regular-webfont.woff") format('woff'), 
-                    url("{{path.getPath('assets')}}fonts/Voltaire/voltaire-regular-webfont.svg#Varela") format('svg'), 
-                    url("{{path.getPath('assets')}}fonts/Voltaire/voltaire-regular-webfont.ttf") format('truetype'); /* Safari, Android, iOS */
+                src: url("{{path.getPath('assets')}}/fonts/Voltaire/voltaire-regular-webfont.eot"); /* Mode de compatibilité IE9 */
+                src: url("{{path.getPath('assets')}}/fonts/Voltaire/voltaire-regular-webfont.eot?#iefix") format('embedded-opentype'), 
+                    url("{{path.getPath('assets')}}/fonts/Voltaire/voltaire-regular-webfont.woff") format('woff'), 
+                    url("{{path.getPath('assets')}}/fonts/Voltaire/voltaire-regular-webfont.svg#Varela") format('svg'), 
+                    url("{{path.getPath('assets')}}/fonts/Voltaire/voltaire-regular-webfont.ttf") format('truetype'); /* Safari, Android, iOS */
                 font-weight: 'normal';
                 font-style: 'normal';
             }
