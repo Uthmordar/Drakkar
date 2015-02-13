@@ -1,0 +1,15 @@
+table: comments
+columns:
+    id: 
+        INT(11): unsigned|auto_increment
+    article_id: 
+        INT(11): unsigned|DEFAULT NULL
+    content: 
+        TEXT: not null
+keys:
+    primary: id
+    foreign: 
+        key: article_id
+        table: articles
+        on: id
+        delete: cascade

@@ -2,7 +2,7 @@
 require_once 'Autoload.php';
 require_once __DIR__ . DIRECTORY_SEPARATOR . '..' . DIRECTORY_SEPARATOR . 'vendor' . DIRECTORY_SEPARATOR . 'autoload.php';
 
-define('PATH_APP', '..' . DIRECTORY_SEPARATOR . 'App' . DIRECTORY_SEPARATOR);
+define('PATH_APP', __DIR__ . DIRECTORY_SEPARATOR . '..' . DIRECTORY_SEPARATOR . 'App' . DIRECTORY_SEPARATOR);
 define('PATH_CONFIG', PATH_APP . 'configs' . DIRECTORY_SEPARATOR);
 //définition du chemin d'accès au dossier d'images
 define('PATH_ASSETS', 'assets' . DIRECTORY_SEPARATOR);

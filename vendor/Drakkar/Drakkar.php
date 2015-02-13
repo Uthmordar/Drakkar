@@ -11,13 +11,13 @@ class Drakkar{
         try{
             $this->setConfig();
             $this->setPath($arrayPath);
+            \Db::initDb();
             $this->setRender();
-            $this->routing();
         }catch(RuntimeException $e){
             $this->render->renderError($e);
         }
     }
-    
+        
     /**
      * set Config container object
      */
