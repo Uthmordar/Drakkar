@@ -1,4 +1,5 @@
 <?php
+use Symfony\Component\Yaml\Yaml;
 
 class Drakkar{
     private $autoload;
@@ -21,7 +22,7 @@ class Drakkar{
      * set Config container object
      */
     public function setConfig(){
-        $this->config=new \Configs\Config(require_once PATH_CONFIG . 'app.php');
+        $this->config=new \Configs\Config(Yaml::parse(PATH_CONFIG . 'app.yml'));
     }
 
     /**
