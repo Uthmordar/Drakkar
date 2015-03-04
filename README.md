@@ -8,6 +8,7 @@
 DATABASE COMMANDS
 
 use App\database\Tables and create yml file for db
+    
     table: comments
         columns:
             id: 
@@ -25,6 +26,7 @@ use App\database\Tables and create yml file for db
                 delete: cascade
 
 use App\database\Seeds and create yml files for db seeding
+    
     table: articles
         seeds:
             0: 
