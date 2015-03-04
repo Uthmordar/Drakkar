@@ -18,13 +18,21 @@ if(!empty($argv[1]) && $argv[1]=="drop"){
     }else{
         $files=array_reverse(array_diff(scandir(PATH_TABLES), array('..', '.')));
         foreach($files as $file){
-            $drop->dropYamlTable(Yaml::parse(PATH_TABLES . DIRECTORY_SEPARATOR . $file));
+            try{
+                $drop->dropYamlTable(Yaml::parse(PATH_TABLES . DIRECTORY_SEPARATOR . $file));
+            }catch(\Symfony\Component\Yaml\Exception\ParseException $e){
+                echo 'File ' . $file . ' in App\database\Tables generate an error. Check yml conformance.';
+            }
         }
     }
 }else{
     $generator=new CreateTable(\Db::getDb());
     $files=array_diff(scandir(PATH_TABLES), array('..', '.'));
     foreach($files as $file){
-        $generator->generateTable(Yaml::parse(PATH_TABLES . DIRECTORY_SEPARATOR . $file));
+        try{
+            $generator->generateTable(Yaml::parse(PATH_TABLES . DIRECTORY_SEPARATOR . $file));
+        }catch(\Symfony\Component\Yaml\Exception\ParseException $e){
+            echo 'File ' . $file . ' in App\database\Tables generate an error. Check yml conformance.';
+        }
     }
 }

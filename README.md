@@ -24,9 +24,29 @@ use App\database\Tables and create yml file for db
                 on: id
                 delete: cascade
 
+use App\database\Seeds and create yml files for db seeding
+    table: articles
+        seeds:
+            0: 
+                name: toto
+                password: toto
+                email: toto@mail.com
+                status: admin
+            1: 
+                name: titi
+                password: titi
+                email: titi@mail.com
+                status: visitor
+
 RUN MIGRATION
- php vendor\Drakkar\console\migration\migrate.php => create all table
+ php vendor\Drakkar\console\seafarer.php pour commande database puis arguments :
+    use file from App\database\tables
+    migrate:create => create all table
+    migrate:drop => drop all table
+    migrate:drop table => drop table
 
- php vendor\Drakkar\console\migration\migrate.php drop => drop all table
-
- php vendor\Drakkar\console\migration\migrate.php drop comments => drop specific table
+    use seed from App\database\seeds
+    seed:seed => seed all tables 
+    seed:seed table => seed table
+    seed:truncate => truncate all table
+    seed:truncate table => truncate table

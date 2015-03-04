@@ -1,0 +1,12 @@
+table: articles
+seeds:
+    0: 
+        name: toto
+        password: toto
+        email: toto@mail.com
+        status: admin
+    1: 
+        name: titi
+        password: titi
+        email: titi@mail.com
+        status: visitor
