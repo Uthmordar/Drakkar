@@ -40,6 +40,7 @@ use App\database\Seeds and create yml files for db seeding
 
 RUN MIGRATION
  php vendor\Drakkar\console\seafarer.php pour commande database puis arguments :
+    
     use file from App\database\tables
     migrate:create => create all table
     migrate:drop => drop all table

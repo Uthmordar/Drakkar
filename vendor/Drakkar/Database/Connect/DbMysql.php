@@ -23,7 +23,6 @@ class DbMysql implements \Interfaces\iDb{
     }
     
     /**
-     * 
      * @return type
      */
     public static function getConnect(){

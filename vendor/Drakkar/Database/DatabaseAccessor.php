@@ -34,7 +34,7 @@ class DatabaseAccessor implements \Interfaces\iSingleton{
     }
     
     /**
-     * 
+     * set database from config file
      * @return \Drakkar
      */
     public function setDatabase(){
@@ -44,7 +44,7 @@ class DatabaseAccessor implements \Interfaces\iSingleton{
     }
     
     /**
-     * 
+     * set connect to database 
      */
     public function linkDatabase(){
         $DB='\Database\Connect\Db'.ucfirst(strtolower($this->dbConnection['driver']));
@@ -53,7 +53,6 @@ class DatabaseAccessor implements \Interfaces\iSingleton{
     }
     
     /**
-     * 
      * @return type
      */
     public function getDb(){
